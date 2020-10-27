@@ -45,19 +45,9 @@ class render extends server
             include self::$path.'404.php';
         }
         if ($found == true) {
-            include self::$path.'art.php';
+            include self::$path.$cfg[$page];
             var_dump($count);
         }
 
-    }
-    public static function get_data($id)
-    {
-        $data = self::execute("SELECT * FROM `questions` WHERE `id` = '$id'");
-        $exit = $data->fetch();
-        return $exit;
-    }
-    public static function header()
-    {
-        include '/temp/tmp/header.php';
     }
 }
