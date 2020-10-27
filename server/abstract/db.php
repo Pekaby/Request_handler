@@ -36,12 +36,6 @@ abstract class db
         $stmt->execute();
         return $stmt;
     }
-    protected static function exist($id)
-    {
-        $connect = self::connect();
-        $stmt = self::execute("SELECT `id` FROM `questions` WHERE `id` = '$id'");
-        return $stmt->rowCount();
-    }
     protected static function query($sql)
     {
         $c = self::connect();
