@@ -22,8 +22,9 @@ class requests extends server
         $q = explode('?', $_SERVER['REQUEST_URI']);
         if (isset($q[1])) {
            $this->get = $q[1];
-           $art_id = explode('=', $q[1]);
-           $_SESSION['art_id'] = $art_id[1];
+           $get = explode('=', $q[1]);
+           $_SESSION['get_val'] = $art_id[1];
+           $_SESSION['get'] = $this->get;
         }
         $this->check();
         return $q[0];
